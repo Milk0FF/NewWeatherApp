@@ -1,4 +1,4 @@
-package com.example.openweatherapp.domain.model
+package com.example.newweatherapp.domain.model
 
 data class City(
     val lat: String?,

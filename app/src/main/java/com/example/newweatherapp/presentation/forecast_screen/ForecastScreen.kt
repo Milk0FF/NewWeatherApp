@@ -5,12 +5,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -34,6 +37,7 @@ import com.example.newweatherapp.Main
 import com.example.newweatherapp.R
 import com.example.newweatherapp.data.repository.getWeatherInfoData
 import com.example.newweatherapp.presentation.component.WeatherList
+import com.example.newweatherapp.presentation.component.WeekWeatherList
 
 
 @Composable
@@ -46,7 +50,7 @@ fun Forecast(){
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
-            
+
         ){
             TextField(
                 value = value,
@@ -95,6 +99,11 @@ fun Forecast(){
         Text(text = "Sunny",fontSize = 15.sp)
 
         WeatherList()
+
+        Text(text = "This week",fontSize = 25.sp)
+
+        Text(text = "Synny today and later in week with",fontSize = 15.sp)
+        WeekWeatherList()
 
     }
 }

@@ -6,17 +6,23 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface WeatherApi {
-    @GET("data/2.5/weather?appid=c80ea20764a8eae675a7fe923e9f5274")
+    companion object {
+        const val API_KEY = "c80ea20764a8eae675a7fe923e9f5274"
+        const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
+    }
+
+    @GET("weather")
     fun getWeather(
-        @Query("lat") lat: String?,
-        @Query("lon") lon: String?,
-        @Query("units") units: String?
+        @Query("q") cityName: String,
+        @Query("units") units: String = "metric",
+        @Query("appId") apiKey: String = API_KEY
     ): Call<JsonObject>
 
-    @GET("data/2.5/forecast?appid=c80ea20764a8eae675a7fe923e9f5274")
+    @GET("forecast")
     fun getForecast(
-        @Query("lat") lat: String?,
-        @Query("lon") lon: String?,
-        @Query("units") units: String?
+        @Query("lat") lat: String,
+        @Query("lon") lon: String,
+        @Query("units") units: String = "metric",
+        @Query("appId") apiKey: String = API_KEY
     ): Call<JsonObject>
 }

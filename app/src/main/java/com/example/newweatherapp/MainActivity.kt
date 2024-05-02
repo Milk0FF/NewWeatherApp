@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -38,8 +40,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Main() {
     val navController = rememberNavController()
+    val scrollState = rememberScrollState()
     Column() {
-        NavHost(navController, startDestination = NavRoutes.Forecast.route, modifier = Modifier.weight(1f)) {
+        NavHost(navController, startDestination = NavRoutes.Location.route, modifier = Modifier.weight(1f)) {
             composable(NavRoutes.Location.route) { Location() }
             composable(NavRoutes.Forecast.route) { Forecast()  }
             composable(NavRoutes.Radar.route) { Radar() }
