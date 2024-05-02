@@ -42,7 +42,7 @@ fun Main() {
     val navController = rememberNavController()
     val scrollState = rememberScrollState()
     Column() {
-        NavHost(navController, startDestination = NavRoutes.Location.route, modifier = Modifier.weight(1f)) {
+        NavHost(navController, startDestination = NavRoutes.Forecast.route, modifier = Modifier.weight(1f)) {
             composable(NavRoutes.Location.route) { Location() }
             composable(NavRoutes.Forecast.route) { Forecast()  }
             composable(NavRoutes.Radar.route) { Radar() }
