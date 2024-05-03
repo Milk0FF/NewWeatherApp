@@ -15,13 +15,13 @@ import com.example.newweatherapp.data.repository.WeatherData
 
 @Composable
 fun WeekWeatherList() {
-    val weatherInfoList = remember { WeatherData.weatherInfoList }
+    val weekWeatherInfoList = remember { WeatherData.weatherInfoList }
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 0.dp, vertical = 10.dp),
         modifier = Modifier.fillMaxHeight().fillMaxWidth()
     ) {
         items(
-            items = weatherInfoList,
+            items = weekWeatherInfoList,
             itemContent = {
                 WeekWeatherListItem(weatherInfo = it)
             })

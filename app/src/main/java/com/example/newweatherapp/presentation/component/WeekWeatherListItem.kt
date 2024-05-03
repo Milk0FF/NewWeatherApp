@@ -30,7 +30,7 @@ import com.example.newweatherapp.domain.model.WeatherInfo
 
 @Composable
 fun WeekWeatherListItem(weatherInfo: WeatherInfo) {
-    Row (Modifier.padding(0.dp, 0.dp, 0.dp, 10.dp)){
+    Row (Modifier.padding(0.dp, 0.dp, 0.dp, 10.dp), verticalAlignment = Alignment.CenterVertically){
         Column(Modifier.weight(1f), horizontalAlignment = Alignment.End) {
                 Row(verticalAlignment = Alignment.CenterVertically){
                     Text("${weatherInfo.humidity}%", fontSize = 25.sp,  textAlign = TextAlign.Center)
@@ -44,13 +44,13 @@ fun WeekWeatherListItem(weatherInfo: WeatherInfo) {
                     )
                 }
         }
-        Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center){
+        Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally){
             Text("WED")
             Text("${weatherInfo.date}")
         }
-        Column(Modifier.weight(1f), horizontalAlignment = Alignment.Start, verticalArrangement = Arrangement.Center  ){
-            Text("Current : ${weatherInfo.minTemp}°",  textAlign = TextAlign.Center,fontSize = 20.sp)
-            Text("Max : ${weatherInfo.maxTemp}°",  textAlign = TextAlign.Center, fontSize = 20.sp)
+        Column(Modifier.weight(1f), horizontalAlignment = Alignment.Start){
+            Text("Current : ${weatherInfo.minTemp}°",  textAlign = TextAlign.Center,fontSize = 15.sp)
+            Text("Max : ${weatherInfo.maxTemp}°",  textAlign = TextAlign.Center, fontSize = 15.sp)
         }
     }
 }
@@ -58,5 +58,5 @@ fun WeekWeatherListItem(weatherInfo: WeatherInfo) {
 @Composable
 fun WeekWeatherListItemPreview(){
     val weatherInfo = remember { WeatherData.weatherInfoList[0] }
-    WeatherListItem(weatherInfo)
+    WeekWeatherListItem(weatherInfo)
 }

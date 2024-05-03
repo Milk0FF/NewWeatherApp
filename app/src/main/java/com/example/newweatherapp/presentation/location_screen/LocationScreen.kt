@@ -1,15 +1,13 @@
 package com.example.newweatherapp.presentation.location_screen
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -18,7 +16,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.newweatherapp.presentation.forecast_screen.Forecast
 
 @Composable
 fun Location(){
@@ -32,14 +29,16 @@ fun Location(){
             singleLine = false,
             modifier = Modifier.fillMaxWidth()
         )
-        for(i in 15 downTo 0) {
-            CityList()
+        LazyColumn(){
+            items(15){
+                CityListItem()
+            }
         }
     }
 }
 @Composable
-fun CityList(){
-    Column (Modifier.padding(15.dp, 10.dp)) {
+fun CityListItem(){
+    Column (Modifier.padding(15.dp, 10.dp).fillMaxWidth()) {
         Text("Omsk", fontSize = 15.sp)
         Text("Russia", fontSize = 10.sp)
     }
