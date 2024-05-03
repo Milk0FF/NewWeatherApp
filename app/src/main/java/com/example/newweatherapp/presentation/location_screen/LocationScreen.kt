@@ -27,12 +27,12 @@ fun Location(){
         TextField(
             value = value,
             onValueChange = {value = it},
-            placeholder = { Text("City name") },
+            placeholder = { Text("Type city name") },
             textStyle = TextStyle(fontSize=18.sp),
             singleLine = false,
             modifier = Modifier.fillMaxWidth()
         )
-        for(i in 10 downTo 0) {
+        for(i in 15 downTo 0) {
             CityList()
         }
     }

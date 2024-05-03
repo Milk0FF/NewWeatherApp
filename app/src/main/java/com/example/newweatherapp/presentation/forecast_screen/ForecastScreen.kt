@@ -55,10 +55,10 @@ fun Forecast(){
             TextField(
                 value = value,
                 onValueChange = {value = it},
-                placeholder = { Text("Название города") },
+                placeholder = { Text("Type city name") },
                 textStyle = TextStyle(fontSize=18.sp),
                 singleLine = false,
-                modifier = Modifier.weight(1.5f)
+                modifier = Modifier.weight(2f)
             )
             Button(
                 onClick = {
@@ -72,7 +72,7 @@ fun Forecast(){
 
 
             ) {
-                Text(text = "Get weather", modifier = Modifier.padding(8.dp), textAlign = TextAlign.Center)
+                Text(text = "Get \n weather", modifier = Modifier.padding(2.dp), textAlign = TextAlign.Center, fontSize = 12.sp)
             }
         }
 
@@ -102,7 +102,7 @@ fun Forecast(){
 
         Text(text = "This week",fontSize = 25.sp)
 
-        Text(text = "Synny today and later in week with",fontSize = 15.sp)
+        Text(text = "Sunny today and later in week with",fontSize = 15.sp)
         WeekWeatherList()
 
     }

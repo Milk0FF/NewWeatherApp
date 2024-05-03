@@ -5,7 +5,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material.icons.rounded.Place
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
@@ -48,7 +51,7 @@ object NavBarItems {
     val BarItems = listOf(
         BarItem(
             title = "Location",
-            image = Icons.Filled.LocationOn,
+            image = Icons.Filled.Place,
             route = "location"
         ),
         BarItem(
@@ -58,7 +61,7 @@ object NavBarItems {
         ),
         BarItem(
             title = "Radar",
-            image = Icons.Filled.Call,
+            image = Icons.Rounded.Home,
             route = "radar"
         ),
         BarItem(
